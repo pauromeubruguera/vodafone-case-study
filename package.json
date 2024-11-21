@@ -1,0 +1,13 @@
+{
+  "name": "case-study",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"npm start --prefix frontend\" \"npm run start:dev --prefix backend\"",
+    "build": "npm run build --prefix frontend && npm run build --prefix backend",
+    "frontend": "npm start --prefix frontend",
+    "backend": "npm run start:dev --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
