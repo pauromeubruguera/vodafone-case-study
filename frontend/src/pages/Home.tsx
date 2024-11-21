@@ -1,17 +1,7 @@
 import React from 'react';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { Map } from '../components/Map';
-
-const GET_DEVICES = gql`
-  query {
-    devices {
-      id
-      name
-      latitude
-      longitude
-    }
-  }
-`;
+import { GET_DEVICES } from '../graphql/queries';
 
 export const Home: React.FC = () => {
   const { loading, error, data } = useQuery(GET_DEVICES);
