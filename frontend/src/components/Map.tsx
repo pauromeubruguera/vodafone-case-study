@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { LoadScript, GoogleMap, MarkerF, InfoWindow } from '@react-google-maps/api';
+import React, { useState } from 'react';
+import { LoadScript, GoogleMap, InfoWindow } from '@react-google-maps/api';
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
+import { Device } from '../types/types';
 
 const containerStyle = {
   width: '100%',
@@ -8,20 +9,11 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 41.3884, // Centro de Barcelona
+  lat: 41.3884,
   lng: 2.1925,
 };
 
 const zoom = 12;
-
-interface Device {
-  id: string;
-  name: string;
-  mobileNumber: string;
-  lastConnection: string;
-  latitude: number;
-  longitude: number;
-}
 
 interface MapProps {
   devices: Device[];
